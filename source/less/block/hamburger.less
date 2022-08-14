@@ -1,0 +1,60 @@
+.hamburger {
+  position: relative;
+}
+
+.hamburger__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 25px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 1px;
+
+  &--line {
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: @color-black-original;
+    .transition();
+  }
+
+  &--show {
+    .hamburger__button--line:nth-child(2n-1) {
+      background-color: transparent;
+    }
+
+    .hamburger__button--line:nth-child(2) {
+      transform: rotate(45deg) translate(4px, 7px) scaleX(1.25);
+    }
+
+    .hamburger__button--line:last-child {
+      transform: rotate(-45deg) translate(4px, -7px) scaleX(1.25);
+    }
+  }
+}
+
+@media @tablet {
+  .hamburger__button {
+    height: 30px;
+    width: 50px;
+
+    &--line {
+      width: 100%;
+      height: 4px;
+      border-radius: 10px;
+    }
+
+    &--show {
+      .hamburger__button--line:nth-child(2) {
+        transform: rotate(45deg) translate(10px, 7px) scaleX(1.25);
+      }
+
+      .hamburger__button--line:last-child {
+        transform: rotate(-45deg) translate(10px, -7px) scaleX(1.25);
+      }
+    }
+  }
+}

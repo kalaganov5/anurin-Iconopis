@@ -1,0 +1,43 @@
+.header {
+  min-width: auto;
+  background-color: @color-green;
+  display: grid;
+  grid-template-columns:
+    minmax(15px, auto)
+    repeat(2, 1fr)
+    minmax(15px, auto);
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.header__logo {
+  grid-column: ~"2/3";
+}
+
+.header__nav {
+  justify-self: flex-end;
+}
+
+@media @desktop {
+  .header {
+    grid-template-columns:
+      minmax(20px, auto)
+      repeat(2, 570px)
+      minmax(@width-external-gap, auto);
+  }
+
+  .header__hamburger {
+    display: none;
+  }
+
+  .header__nav {
+    justify-self: flex-end;
+    grid-column: ~"3/4";
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 7px;
+  }
+}
