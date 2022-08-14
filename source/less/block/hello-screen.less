@@ -1,0 +1,100 @@
+.hello-screen {
+  padding: 65px 25px;
+  min-height: 400px;
+  background: linear-gradient(@color-darker, @color-darker), url("../img/rospis-kupola-400.jpg");
+  background-color: @color-black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: @color-white;
+  font-size: 14px;
+  line-height: 17px;
+
+  @media @mobile-medium {
+    & {
+      background: linear-gradient(@color-darker, @color-darker), url("../img/rospis-kupola-1000.jpg");
+      background-color: @color-black;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  @media @tablet {
+    & {
+      background: linear-gradient(@color-darker, @color-darker), url("../img/rospis-kupola-1200.jpg");
+      background-color: @color-black;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+.hello-screen__headline {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+
+  &--desc {
+    font-weight: 500;
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+
+.hello-screen__subtitle {
+  font-weight: 300;
+  margin-bottom: 110px;
+}
+
+@media @desktop {
+  .hello-screen {
+    padding: 140px 0 125px 0;
+    display: grid;
+    grid-template-columns: minmax(130px, auto) 940px minmax(130px, auto);
+    align-items: flex-start;
+    justify-items: flex-start;
+
+    @media (min-width: 1300px) {
+      & {
+        background: linear-gradient(@color-darker, @color-darker), url("../img/rospis-kupola-1280.jpg");
+        background-color: @color-black;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  .hello-screen__headline {
+    grid-column: ~"2/3";
+    font-size: 32px;
+    line-height: 39px;
+    margin-bottom: 10px;
+
+    &--desc {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      max-width: 430px;
+      margin-bottom: 0;
+    }
+  }
+
+  .hello-screen__subtitle {
+    margin-top: 0;
+    margin-bottom: 150px;
+    font-size: 16px;
+    line-height: 20px;
+    grid-column: ~"2/3";
+  }
+
+  .hello-screen__button {
+    grid-column: ~"2/3";
+  }
+}
