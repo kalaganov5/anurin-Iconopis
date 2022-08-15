@@ -20,3 +20,23 @@
 .outline-dark {
   outline: 1px solid @color-black;
 }
+
+.visually-hidden-mixin(@isHide: 1) when (@isHide = 1) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.visually-hidden-mixin(@isHide) when (@isHide = 0) {
+  clip: unset;
+  clip-path: unset;
+  height: unset;
+  overflow: unset;
+  position: unset;
+  white-space: unset;
+  width: unset;
+}
