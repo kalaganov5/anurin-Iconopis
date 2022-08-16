@@ -7,8 +7,8 @@
   background-size: cover;
   background-position: center;
   color: @color-white;
-  font-size: 14px;
-  line-height: 17px;
+  .font-size(14, 16);
+  .line-height(17, 20);
 
   @media @mobile-medium {
     & {
@@ -33,14 +33,14 @@
 
 .hello-screen__headline {
   font-weight: 800;
-  font-size: 18px;
-  line-height: 22px;
+  .font-size(18, 32);
+  .line-height(22, 39);
 
   &--desc {
     font-weight: 500;
     display: block;
-    font-size: 14px;
-    line-height: 17px;
+    .font-size(14, 24);
+    .line-height(17, 29);
     margin-top: 5px;
     margin-bottom: 20px;
   }
