@@ -84,15 +84,16 @@
 
 .works__title {
   margin-bottom: 25px;
-  font-size: 18px;
-  line-height: 20px;
+  .font-size(18, 24);
+  .line-height(20, 29);
 }
 
 .works__pseudo-link {
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.3);
-  font-size: 16px;
-  line-height: 17px;
+  .font-size(16, 18);
+  .line-height(18, 20);
+  font-weight: 400;
   position: absolute;
   bottom: 10px;
 }
@@ -121,18 +122,15 @@
 
   .works__title {
     font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
-  }
-
-  .works__pseudo-link {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
   }
 }
 
 @media @desktop {
+  .works__title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
   .works__link {
     &:focus,
     &:hover,
@@ -146,5 +144,7 @@
 
   .works__pseudo-link {
     text-decoration: none;
+    font-size: 18px;
+    line-height: 20px;
   }
 }
