@@ -1,0 +1,23 @@
+.about {
+  display: grid;
+  grid-template-columns: minmax(25px, auto) minmax(auto, 940px) minmax(25px, auto);
+
+  & > * {
+    grid-column: ~"2/3";
+  }
+}
+
+.about__subtitle {
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0;
+  .font-size(14, 24);
+  .line-height(16, 29);
+}
+
+@media @desktop {
+  .about__subtitle {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}

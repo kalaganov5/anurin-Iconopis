@@ -1,6 +1,11 @@
 .paragraph {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
+  .font-size(14, 18);
+  .line-height(16, 22);
   color: @color-black-original;
+}
+
+@media @desktop {
+  font-size: 18px;
+  line-height: 22px;
 }
