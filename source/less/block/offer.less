@@ -1,0 +1,12 @@
+.offer {
+  display: grid;
+  grid-template-columns: minmax(25px, auto) minmax(auto, 940px) minmax(25px, auto);
+
+  & > * {
+    grid-column: ~"2/3";
+  }
+}
+
+.offer__headline {
+  text-transform: uppercase;
+}

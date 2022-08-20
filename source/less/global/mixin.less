@@ -51,3 +51,18 @@
   white-space: unset;
   width: unset;
 }
+
+.blurred-circle(@size: 350px, @blur: 100px) {
+  &::before {
+    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    width: @size;
+    height: @size;
+    background: rgba(@color-green, 0.72);
+    filter: blur(@blur);
+    border-radius: 50%;
+  }
+}
