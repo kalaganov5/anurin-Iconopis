@@ -439,6 +439,65 @@
           </li>
         </ul>
       </section>
+      <section class="main__section contacts">
+        <h2 class="contacts__headline headline">
+          Контакты
+        </h2>
+        <p class="contacts__desc paragraph">
+          Перед началом работ просим связаться с художников одним из удобных для вас способов для уточнения деталей по заказу:
+        </p>
+        <a href="tel:79045914599" class="contacts__link">+7 904 591-45-99</a>
+        <a href="mailto:iconopis-moscow@mail.ru" class="contacts__link">iconopis-moscow@mail.ru</a>
+        <ul class="contacts__socials socials">
+          <li class="socials__item">
+            <a class="contacts__link" href="https://vk.me/artistprofi" title="Связаться через ВКонтакте">
+              <svg class="contacts__icon">
+                <use xlink:href="#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="contacts__link" href="https://wa.me/79045914599" title="Связаться через WhatsApp">
+              <svg class="contacts__icon">
+                <use xlink:href="#icon-whatsapp"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="contacts__link" href="viber://chat?number=%2B79045914599" title="Связаться через Viber">
+              <svg class="contacts__icon">
+                <use xlink:href="#icon-viber"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="contacts__link" href="https://t.me/+79045914599" title="Связаться через Telegram">
+              <svg class="contacts__icon">
+                <use xlink:href="#icon-telegram"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <form class="contacts__form form" action="/" method="post">
+          <label class="form__label" for="use-name">
+            Имя
+          </label>
+          <input class="form__input" type="text" id="use-name"/>
+          <label class="form__label" for="user-phone">
+            Телефон <span class="form__text-muted">(обязательно)</span>
+          </label>
+          <input class="form__input" type="text" id="user-phone" required/>
+          <label class="form__label" for="user-phone">
+            Комментарий
+          </label>
+          <textarea name="comments" id="comments" cols="30" rows="3"></textarea>
+          <input type="checkbox" name="accept-rule" id="accept-rule" checked required>
+          <label class="form__label" for="accept-rule">
+            Я согласен(а) с <a href="/privacy-policy">Политикой конфиденциальности</a>
+          </label>
+          <button type="submit">Отправить</button>
+        </form>
+      </section>
     </main>
     <script>
       const menuButton = document.querySelector('#header-menu-toggle');
