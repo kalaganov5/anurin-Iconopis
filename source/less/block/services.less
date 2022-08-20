@@ -13,5 +13,26 @@
 @media @desktop {
   .services__item {
     margin-bottom: 55px;
+    position: relative;
+
+
+    &:nth-of-type(2n) {
+      .blurred-circle();
+      &:nth-child(2n):before {
+        bottom: -240px;
+        top: unset;
+        left: -200px;
+        transform: none;
+      }
+
+      &:nth-of-type(4n):before {
+        bottom: -170px;
+        top: unset;
+        left: unset;
+        right: -130px;
+      }
+    }
+
+
   }
 }
