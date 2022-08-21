@@ -1,0 +1,24 @@
+.links-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .list-style-none();
+  margin: 10px;
+  gap: 15px;
+  justify-content: center;
+}
+
+.links-footer__link {
+  color: @color-black-original;
+  text-decoration-color: rgba(@color-black-original, 0.2);
+  .transition();
+
+  &:hover,
+  &:focus {
+    text-decoration-color: rgba(@color-black-original, 1);
+  }
+}
+
+.links-footer__item {
+  text-align: center;
+}

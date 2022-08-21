@@ -6,6 +6,21 @@
   column-gap: 15px;
   row-gap: 10px;
   justify-content: center;
+
+  & .socials__icon {
+    &--vk {
+      fill: #0077ff;
+    }
+  }
+
+  &--footer .socials__icon {
+    width: 31px;
+    height: 31px;
+
+    &--vk {
+      fill: @color-black-original;
+    }
+  }
 }
 
 .socials__link {
@@ -13,5 +28,14 @@
   &:focus {
     .transition();
     opacity: 0.8;
+  }
+}
+
+@media @desktop {
+  .socials {
+    &--footer .socials__icon {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
