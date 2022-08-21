@@ -121,7 +121,7 @@
         </p>
         <a href="#contacts" class="hello-screen__button button">Связаться с&nbsp;художником</a>
       </section>
-      <section class="main__section portfolio">
+      <section class="main__section portfolio" id="portfolio">
         <h2 class="headline portfolio__headline">
           Портфолио
         </h2>
@@ -190,7 +190,7 @@
           </li>
         </ul>
       </section>
-      <section class="main__section about">
+      <section class="main__section about" id="about">
         <h2 class="about__headline headline">
           Об авторе
         </h2>
@@ -241,7 +241,7 @@
           </li>
         </ul>
       </section>
-      <section class="main__section offer">
+      <section class="main__section offer" id="services">
         <h2 class="offer__headline headline">
           Услуги автора
         </h2>
@@ -439,35 +439,73 @@
           </li>
         </ul>
       </section>
+      <section class="main__section contacts" id="contacts">
+        <h2 class="contacts__headline headline">
+          Контакты
+        </h2>
+        <p class="contacts__desc paragraph">
+          Перед началом работ просим связаться с художников одним из удобных для вас способов для уточнения деталей по заказу:
+        </p>
+        <a href="tel:79045914599" class="contacts__link">+7 904 591-45-99</a>
+        <a href="mailto:iconopis-moscow@mail.ru" class="contacts__link">iconopis-moscow@mail.ru</a>
+        <ul class="contacts__socials socials">
+          <li class="socials__item">
+            <a class="socials__link" href="https://vk.me/artistprofi" title="Связаться через ВКонтакте">
+              <svg class="socials__icon" width="40" height="40">
+                <use xlink:href="#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="https://wa.me/79045914599" title="Связаться через WhatsApp">
+              <svg class="socials__icon" width="40" height="40">
+                <use xlink:href="#icon-whatsapp"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="viber://chat?number=%2B79045914599" title="Связаться через Viber">
+              <svg class="socials__icon" width="40" height="40">
+                <use xlink:href="#icon-viber"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link" href="https://t.me/+79045914599" title="Связаться через Telegram">
+              <svg class="socials__icon" width="40" height="40">
+                <use xlink:href="#icon-telegram"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <form class="contacts__form form" id="contact-form" action="/" method="post">
+          <label class="form__label" for="use-name">
+            Имя
+          </label>
+          <input class="form__input" type="text" id="use-name"/>
+          <label class="form__label" for="user-phone">
+            Телефон <span class="form__text-muted">(обязательно)</span>
+          </label>
+          <input class="form__input" type="tel" id="user-phone" placeholder="8 (999) 000-00-00" data-tel-input maxlength="18" required/>
+          <label class="form__label" for="user-phone">
+            Комментарий
+          </label>
+          <textarea class="form__comments" name="comments" id="comments" cols="30" rows="2"></textarea>
+          <label class="form__label form__label--checkbox" for="accept-rule">
+            <input class="form__checkbox" type="checkbox" name="accept-rule" id="accept-rule" checked required>
+            <span class="form__checkbox-icon"></span>
+            Я согласен(а) с <a class="form__link" target="_blank" href="/privacy-policy">Политикой конфиденциальности</a>
+          </label>
+          <button class="form__submit button" id="submit-button" type="submit">Отправить</button>
+        </form>
+        <div class="contacts__images">
+          <picture class="contacts__picture">
+            <source srcset="img/anurin-yurii.jpg 1x, img/anurin-yurii@2x.jpg 2x">
+            <img class="contacts__image" width="260" height="347" src="img/anurin-yurii.jpg" alt="Описание" loading="lazy"/>
+          </picture>
+        </div>
+      </section>
     </main>
-    <script>
-      const menuButton = document.querySelector('#header-menu-toggle');
-      const menu = document.querySelector('#main-navigation');
-
-      const toggleMenu = () => {
-        menuButton.classList.toggle('hamburger__button--show');
-        menu.classList.toggle('navigation--show');
-
-        const closeMenuIsClickWithout = (evt) => {
-          const target = evt.target;
-          let isMenu = target === menu || menu.contains(target);
-          let hamburger = target === menuButton || menuButton.contains(target);
-          let isMenuActive = menu.classList.contains('navigation--show');
-
-          if (!isMenu && !hamburger && isMenuActive) {
-            toggleMenu();
-          }
-        };
-
-        document.addEventListener('click', closeMenuIsClickWithout);
-
-        const isCloseMenu = !menu.classList.contains('navigation--show');
-        if (isCloseMenu) {
-          document.removeEventListener('click', closeMenuIsClickWithout);
-        }
-      }
-
-      menuButton.addEventListener('click', toggleMenu);
-    </script>
+    <script defer src="js/script.js"></script>
   </body>
 </html>
