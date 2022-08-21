@@ -9,7 +9,7 @@
   text-align: center;
   box-sizing: border-box;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%; /* 16:9 Aspect Ratio https://web.dev/i18n/ru/aspect-ratio/ */
   position: relative;
   background-color: @color-darker;
   border-radius: 32px;
@@ -106,18 +106,7 @@
     row-gap: 35px;
     position: relative;
 
-    &::before {
-      content: "";
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      background: rgba(117, 148, 84, 0.72);
-      filter: blur(100px);
-      border-radius: 50%;
-    }
+    .blurred-circle();
   }
 
   .works__title {
