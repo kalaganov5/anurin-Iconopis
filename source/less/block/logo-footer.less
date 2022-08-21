@@ -1,0 +1,22 @@
+.logo-footer__image {
+  &:hover,
+  &:focus {
+    .transition();
+    opacity: 0.8;
+  }
+
+  &--pc {
+    display: none;
+  }
+}
+
+@media @desktop {
+  .logo-footer__image {
+    display: none;
+
+    &--pc {
+      margin-top: -10px;
+      display: block;
+    }
+  }
+}

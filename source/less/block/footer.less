@@ -1,3 +1,40 @@
 .footer {
   background-color: @color-green;
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: minmax(20px, auto) 40px 1fr 40px minmax(20px, auto);
+
+  & > * {
+    grid-column: ~"3/-3";
+  }
+}
+
+.footer__logo {
+  grid-column: ~"2/3";
+  grid-row: ~"1/2";
+}
+
+.footer__copyright {
+  grid-column: ~"2/-2";
+  text-align: center;
+}
+
+
+@media @desktop {
+  .footer {
+    padding: 25px 0;
+    grid-template-columns: minmax(20px, auto) 300px 1fr 300px minmax(20px, auto);
+  }
+
+  .footer__link {
+    grid-row: ~"1/2";
+  }
+
+  .footer__socials {
+    grid-column: ~"4/5";
+  }
+
+  .footer__copyright {
+    grid-column: ~"3/4";
+  }
 }
