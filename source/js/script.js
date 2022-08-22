@@ -202,7 +202,7 @@ hideContactText(".contacts__link");
 
 // modal
 const mainHTML = document.documentElement;
-const showModal = (modalClass) => {
+const showModal = (modalClass, referer = null) => {
 
   const body = document.body;
   const modal = body.querySelector(`.${modalClass}`);
@@ -210,6 +210,11 @@ const showModal = (modalClass) => {
   const modalShowClass = `modal--show`;
   let scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
   const closeButton = modal.querySelector(".modal__close-button");
+
+  // VIP set referer screen to form
+  if (referer !== null) {
+    console.log(referer);
+  }
 
   const closeModal = (evt) => {
     evt.preventDefault();
@@ -249,11 +254,22 @@ window.addEventListener('scroll', () => {
 // send form
 
 const forms = document.querySelectorAll(".form");
-console.log(forms)
 forms.forEach((item) => {
-  console.log(item);
   item.addEventListener('submit', (evt) => {
     evt.preventDefault();
     showModal('modal-success');
+  });
+});
+
+
+// show modal form
+const contactsButton = document.querySelectorAll('a[data-contact]');
+// example get data-contact
+// console.log(contactsButton[0].dataset.contact);
+contactsButton.forEach((contactButton) => {
+  contactButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    const referer = contactButton.dataset.contact;
+    showModal('modal-form', referer);
   });
 });
