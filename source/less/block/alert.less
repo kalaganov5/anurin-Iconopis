@@ -1,0 +1,21 @@
+.alert {
+  background-color: @color-gray;
+  padding: 10px;
+  color: @color-white;
+  display: grid;
+  grid-template-columns: minmax(20px, auto) minmax(auto, 940px) minmax(20px, auto);
+}
+
+.alert__text {
+  grid-column: ~"2/3";
+  color: @color-white;
+  max-width: 900px;
+}
+
+.alert__link {
+  color: @color-white;
+}
+
+.alert__note {
+  font-weight: 700;
+}

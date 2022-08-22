@@ -24,8 +24,8 @@
 }
 
 
-.transition(@duration: 0.1s) {
-  transition: @duration linear;
+.transition(@duration: 0.1s, @property: all) {
+  transition: @property @duration linear;
 }
 
 .outline-dark {
