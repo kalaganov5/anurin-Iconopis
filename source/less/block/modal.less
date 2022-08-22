@@ -16,11 +16,21 @@
     overflow: auto;
     visibility: visible;
     opacity: 1;
+    background-color: rgba(@color-black-original, 0.25);
+  }
+
+  &--mobile-full .modal__content {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
   }
 }
 
 .modal__content {
   width: 80%;
+  max-height: 95%;
+  overflow-y: auto;
   background-color: @color-green-background;
   box-shadow: 0 2px 25px rgba(@color-black-original, 0.25);
   border-radius: 32px;
@@ -54,5 +64,15 @@
   &:hover,
   &:focus {
     border: 1px solid rgba(@color-black-original, 1);
+  }
+}
+
+@media @desktop {
+  .modal {
+    &--mobile-full .modal__content {
+      border-radius: 32px;
+      width: 80%;
+      max-height: 95%;
+    }
   }
 }
