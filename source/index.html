@@ -6,6 +6,7 @@
     <title>Художник-иконописец Юрий Анурин | Иконописная мастерская</title>
     <meta name="description" content="Юрий Анурин – художник-иконописец, реставратор. Занимаюсь написанием и реставрацией икон, росписью храмов и церквей, церковной живописью на холсте.">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="canonical" href="/">
     <link rel="icon" href="img/icon-favicon.svg " sizes="any" type="image/svg+xml">
   </head>
@@ -63,7 +64,7 @@
     </svg>
     <div class="alert">
       <p class="alert__text paragraph">
-        <span class="alert__note">Внимание:</span> Сайт в разработке, поэтому некоторые функции могут работать некорректно. <br>Телефон для связи <a href="tel:79045914599" class="alert__link">8 904 591-45-99</a>
+        <span class="alert__note">Внимание:</span> Сайт в разработке, поэтому некоторые функции могут работать некорректно. <br>Телефон для связи <a href="tel:+79045914599" class="alert__link">8 904 591-45-99</a>
       </p>
     </div>
     <header class="header">
@@ -439,7 +440,7 @@
         <p class="contacts__desc paragraph">
           Перед началом работ просим связаться с художником одним из удобных для вас способов для уточнения деталей по заказу:
         </p>
-        <a href="tel:79045914599" class="contacts__link">8 904 591-45-99</a>
+        <a href="tel:+79045914599" class="contacts__link">8 904 591-45-99</a>
         <a href="mailto:iconopis-moscow@mail.ru" class="contacts__link">iconopis-moscow@mail.ru</a>
         <ul class="contacts__socials socials">
           <li class="socials__item">
@@ -573,7 +574,7 @@
             Закрыть
           </span>
         </button>
-        <a href="tel:79045914599" class="contacts__link">8 904 591-45-99</a>
+        <a href="tel:+79045914599" class="contacts__link">8 904 591-45-99</a>
         <a href="mailto:iconopis-moscow@mail.ru" class="contacts__link">iconopis-moscow@mail.ru</a>
         <ul class="contacts__socials socials">
           <li class="socials__item">
@@ -631,36 +632,118 @@
             Закрыть
           </span>
         </button>
-        <button class="modal-portfolio__switch modal-portfolio__switch--back" type="button">
-          <span class="visually-hidden">
-            Кнопка назад
-          </span>
-        </button>
-        <button class="modal-portfolio__switch modal-portfolio__switch--forward" type="button">
-          <span class="visually-hidden">
-            Кнопка вперёд
-          </span>
-        </button>
-        <figure class="modal-portfolio__figure">
-          <picture>
-            <img class="modal-portfolio__image" src='https://dummyimage.com/1000x800.gif' alt=''/>
-          </picture>
-          <figcaption class="modal-portfolio__container">
-            <div class="modal-portfolio__text">
-              Dolor ipsum aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis Lorem veniam voluptate. Nulla veniam consequat quis minim mollit ullamco do. Ex tempor elit irure anim tempor nostrud laborum Lorem esse minim proident non. Adipisicing quis nisi non cillum pariatur quis non quis.
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-hash="slide1">
+              <figure class="modal-portfolio__figure">
+                <picture>
+                  <img class="modal-portfolio__image swiper-lazy" data-src='https://swiperjs.com/demos/images/nature-2.jpg' alt='Описание'/>
+                </picture>
+                <figcaption class="modal-portfolio__container-text">
+                  <div class="modal-portfolio__text">
+                    1 Dolor ipsum aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis Lorem veniam voluptate. Nulla veniam consequat quis minim mollit ullamco do. Ex tempor elit irure anim tempor nostrud laborum Lorem esse minim proident non. Adipisicing quis nisi non cillum pariatur quis non quis.
+                    Ad excepteur deserunt mollit mollit aute deserunt excepteur est. Voluptate eu aute laborum nostrud in quis in proident adipisicing elit ad Lorem. Occaecat aute magna Lorem anim incididunt pariatur aliquip enim. Duis ullamco anim veniam ullamco elit exercitation aliquip Lorem consequat irure irure sunt. Amet aliqua consequat minim cillum non quis veniam magna eiusmod ea sit consequat culpa qui. Nostrud sunt reprehenderit cupidatat aute non excepteur cillum commodo ullamco.
+                    Id eu reprehenderit Lorem aliquip irure excepteur sint. Laboris sit irure ad non ullamco elit enim duis labore pariatur do. Fugiat est eiusmod nulla magna et velit culpa enim. Ex duis deserunt mollit non duis tempor est officia. Voluptate aliquip dolor voluptate tempor proident velit in consequat ea Lorem voluptate labore do incididunt. Culpa laboris reprehenderit do qui veniam elit aute. Nulla minim sint est officia irure culpa aliqua culpa.
+                    Sint cupidatat officia laboris aute amet reprehenderit irure in elit. Exercitation et nisi adipisicing anim excepteur mollit consequat. Aliqua occaecat in exercitation ea cupidatat qui anim enim veniam officia. Adipisicing esse Lorem cupidatat nulla cupidatat voluptate. Nostrud qui sit ullamco quis. Veniam sunt elit velit in. Quis tempor fugiat aliquip cillum eiusmod laboris dolore ad adipisicing.
+                  </div>
+                </figcaption>
+              </figure>
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-            <div class="modal-portfolio__control">
-              <button class="modal-portfolio__button-show-text modal-portfolio__button-bottom" type="button">
-                Показать описание
-              </button>
-              <button class="modal-portfolio__button-close-text modal-portfolio__button-bottom" type="button">
-                Скрыть описание
-              </button>
+            <div class="swiper-slide" data-hash="slide2">
+              <figure class="modal-portfolio__figure">
+                <picture>
+                  <img class="modal-portfolio__image swiper-lazy" data-src='https://swiperjs.com/demos/images/nature-1.jpg' alt='Описание'/>
+                </picture>
+                <figcaption class="modal-portfolio__container-text">
+                  <div class="modal-portfolio__text">
+                    2 Aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis Lorem veniam voluptate. Nulla veniam consequat quis minim mollit ullamco do. Ex tempor elit irure anim tempor nostrud laborum Lorem esse minim proident non. Adipisicing quis nisi non cillum pariatur quis non quis.
+                  </div>
+                </figcaption>
+              </figure>
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-          </figcaption>
-        </figure>
+            <div class="swiper-slide" data-hash="">
+              <figure class="modal-portfolio__figure">
+                <picture>
+                  <img class="modal-portfolio__image swiper-lazy" data-src='https://tsdbklimovo.ru/wp-content/uploads/2020/06/ookean2.jpg' alt='Подпись'/>
+                </picture>
+                <figcaption class="modal-portfolio__container-text">
+                  <div class="modal-portfolio__text">
+                    2 Aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis Lorem veniam voluptate. Nulla veniam consequat quis minim mollit ullamco do. Ex tempor elit irure anim tempor nostrud laborum Lorem esse minim proident non. Adipisicing quis nisi non cillum pariatur quis non quis.
+                    Aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis.
+                  </div>
+                </figcaption>
+              </figure>
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+            <div class="swiper-slide" data-hash="">
+              <figure class="modal-portfolio__figure">
+                <picture>
+                  <img class="modal-portfolio__image swiper-lazy" data-src='https://getwallpapers.com/wallpaper/full/1/a/4/1382382-vertical-ocean-views-wallpaper-1946x2433-for-iphone.jpg' alt='Подпись'/>
+                </picture>
+                <figcaption class="modal-portfolio__container-text">
+                  <div class="modal-portfolio__text">
+                    2 Aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis Lorem veniam voluptate. Nulla veniam consequat quis minim mollit ullamco do. Ex tempor elit irure anim tempor nostrud laborum Lorem esse minim proident non. Adipisicing quis nisi non cillum pariatur quis non quis.
+                    Aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis.
+                  </div>
+                </figcaption>
+              </figure>
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+            <div class="swiper-slide" data-hash="">
+              <figure class="modal-portfolio__figure">
+                <picture>
+                  <img class="modal-portfolio__image swiper-lazy" data-src='https://img1.goodfon.ru/original/1024x1024/2/2d/volna-more-oblaka-zakat.jpg' alt='Подпись'/>
+                </picture>
+                <figcaption class="modal-portfolio__container-text">
+                  <div class="modal-portfolio__text">
+                    2 Aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis Lorem veniam voluptate. Nulla veniam consequat quis minim mollit ullamco do. Ex tempor elit irure anim tempor nostrud laborum Lorem esse minim proident non. Adipisicing quis nisi non cillum pariatur quis non quis.
+                    Aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis.
+                  </div>
+                </figcaption>
+              </figure>
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+            <div class="swiper-slide" data-hash="">
+              <figure class="modal-portfolio__figure">
+                <picture>
+                  <img class="modal-portfolio__image swiper-lazy" data-src='https://sun9-63.userapi.com/s/v1/ig2/C6VQUV-t6cqcznLVrSNnG8NsEQErq348XitSqtXSSCIasXUEB2toPeYqkF-kSbIhyrsN9rZPitVKGWW8NFo8aHOd.jpg?size=200x200&quality=96&crop=77,77,613,613&ava=1' alt='Подпись'/>
+                </picture>
+                <figcaption class="modal-portfolio__container-text">
+                  <div class="modal-portfolio__text">
+                    2 Aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis Lorem veniam voluptate. Nulla veniam consequat quis minim mollit ullamco do. Ex tempor elit irure anim tempor nostrud laborum Lorem esse minim proident non. Adipisicing quis nisi non cillum pariatur quis non quis.
+                    Aliquip magna sunt ad eiusmod anim non consequat enim aliqua. Ut est sint ex laboris minim duis.
+                  </div>
+                </figcaption>
+              </figure>
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+          </div>
+          <button class="modal__button-pagination modal__button-pagination--prev" type="button">
+            <span class="visually-hidden">
+              Предыдущий слайд
+            </span>
+          </button>
+          <button class="modal__button-pagination modal__button-pagination--next" type="button">
+            <span class="visually-hidden">
+              Следующий слайд
+            </span>
+          </button>
+          <div class="modal-portfolio__progressbar"></div>
+        </div>
+        <div class="modal-portfolio__control">
+          <button class="modal-portfolio__toggle-text" type="button">
+            <span class="modal-portfolio__toggle-text-showed">Показать описание</span>
+            <span class="modal-portfolio__toggle-text-hide">Скрыть описание</span>
+          </button>
+          <p class="modal-portfolio__contact">
+            Тел.: <a href="tel:+79045914599" class="modal-portfolio__contact-link contacts__link">8 904 591-45-99</a>
+          </p>
+        </div>
       </div>
     </div>
+    <script defer type="module" src="js/main.js"></script>
     <script defer src="js/script.js"></script>
   </body>
 </html>

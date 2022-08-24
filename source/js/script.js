@@ -273,3 +273,5 @@ contactsButton.forEach((contactButton) => {
     showModal('modal-form', referer);
   });
 });
+
+showModal("modal-portfolio");
