@@ -23,10 +23,10 @@ const portfolioSlider = new Swiper(".mySwiper", {
   zoom: true,
   effect: "fade",
   loop: true,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: true,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: true,
+  // },
 });
 
 export {portfolioSlider};

@@ -1,38 +1,22 @@
-import {portfolioSlider} from './portfolio.js';
+import {toggleNavigation} from './toggle-navigation.js';
+import {validationPhone} from './phone-validation.js';
+import {hideContacts} from './hide-contacts.js';
+import {formHandler} from './form-handler.js';
+import {portfolioHandler} from './portfolio-handler.js';
+import {contactsToAuthor} from './contact-button-handler.js';
 
-portfolioSlider;
+const contactsLinkClass = ".contacts__link";
 
-/**
- * Кнопка скрыть/показать текст
- */
-const buttonShow = document.querySelector('.modal-portfolio__toggle-text');
-/**
- *
- * @param {boolean} isClose признак, нужно ли закрыть текст
- * @returns
- */
-const textShowPortfolio = (isClose = false) => {
-  const currentSlider = portfolioSlider.el.querySelector(".swiper-slide-active");
-  const textElement = currentSlider.querySelector(".modal-portfolio__text");
-  // проходимся и находим открытые текст
-  const oldTextElement = portfolioSlider.el.querySelector(".modal-portfolio__text--show");
+// init navigation
+toggleNavigation();
+// init phone validation
+validationPhone();
+// init hide contacts
+hideContacts(contactsLinkClass);
+// init hide contacts
+formHandler();
 
-  if (isClose && oldTextElement !== null) {
-    oldTextElement.classList.remove("modal-portfolio__text--show");
-    return;
-  }
+// portfolioSlider;
+portfolioHandler();
 
-  textElement.classList.toggle("modal-portfolio__text--show");
-  buttonShow.classList.toggle("modal-portfolio__toggle-text--show");
-}
-
-const setTogglePortfolioText = () => {
-  buttonShow.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    textShowPortfolio();
-  });
-}
-
-portfolioSlider.on('slideChange', function () {
-  textShowPortfolio(true);
-});
+contactsToAuthor();
