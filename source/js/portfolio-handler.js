@@ -6,10 +6,15 @@ const portfolioButtonsSelector = ".works__link";
 
 const portfolioHandler = () => {
   const portfolioButtons = document.querySelectorAll(portfolioButtonsSelector);
+
+
+
   portfolioButtons.forEach((portfolioButton) => {
     portfolioButton.addEventListener('click', (evt) => {
       evt.preventDefault();
+      debugger;
       portfolioSlider;
+      showModal(portfolioClassName);
 
 
       /**
@@ -29,7 +34,7 @@ const portfolioHandler = () => {
 
 
 
-        if (isClose && oldTextElement !== null) {
+        if (isClose && oldTextElement) {
           oldTextElement.classList.remove("modal-portfolio__text--show");
           try {
             buttonShow.classList.remove("modal-portfolio__toggle-text--show");
@@ -45,8 +50,10 @@ const portfolioHandler = () => {
       }
 
       const setTogglePortfolioText = () => {
+        console.log('установка обработчика показа текста')
         buttonShow.addEventListener('click', (evt) => {
           evt.preventDefault();
+          console.log('показ текста, срабатывание')
           textShowPortfolio();
         });
       };
@@ -54,10 +61,9 @@ const portfolioHandler = () => {
       setTogglePortfolioText();
 
       portfolioSlider.on('slideChange', function () {
+        console.log('смена слайда произошла')
         textShowPortfolio(true);
       });
-
-        showModal(portfolioClassName);
       });
   });
 
