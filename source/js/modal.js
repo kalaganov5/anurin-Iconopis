@@ -8,7 +8,7 @@ let modals = [];
  * @param {*} modalClass класс текущего попап
  * @param {*} modalShowClass класс показа попап
  */
-const closeOldModal = (modalClass, modalShowClass, closeModal, closeModalIsEsc) => {
+const closeOldModal = (modalClass, modalShowClass, closeModal, closeModalIsEscCb) => {
   const newModal = document.querySelectorAll(`.${modalClass}`);
   modals.push(newModal);
 
@@ -17,8 +17,8 @@ const closeOldModal = (modalClass, modalShowClass, closeModal, closeModalIsEsc) 
     //remove old event listener
     const closeButton = oldModal.querySelector(".modal__close-button");
     closeButton.removeEventListener("click", closeModal);
-    console.log(closeModalIsEsc)
-    document.removeEventListener('keydown', closeModalIsEsc);
+
+    document.removeEventListener('keydown', closeModalIsEscCb);
 
     oldModal.classList.remove(modalShowClass);
     modals.splice(0, 1);
@@ -61,10 +61,13 @@ const showModal = (modalClass, referer = null) => {
   }
 
   const closeModalIsEsc = function (evt) {
-    if (evt.keyCode === 27) {
+    if (evt.key === 'Esc' || evt.key === 'Escape') {
+      evt.preventDefault();
       closeModal(evt);
     }
   }
+
+
 
   closeOldModal(modalClass, modalShowClass, closeModal, closeModalIsEsc);
 
