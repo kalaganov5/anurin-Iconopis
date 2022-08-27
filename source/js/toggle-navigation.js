@@ -6,17 +6,6 @@ const toggleNavigation = () => {
     menuButton.classList.toggle('hamburger__button--show');
     menu.classList.toggle('navigation--show');
 
-    const closeMenuIsClickWithout = (evt) => {
-      const target = evt.target;
-      let isMenu = target === menu || menu.contains(target);
-      let hamburger = target === menuButton || menuButton.contains(target);
-      let isMenuActive = menu.classList.contains('navigation--show');
-
-      if (!isMenu && !hamburger && isMenuActive) {
-        toggleMenu();
-      }
-    };
-
     document.addEventListener('click', closeMenuIsClickWithout);
 
     const isCloseMenu = !menu.classList.contains('navigation--show');
@@ -24,6 +13,17 @@ const toggleNavigation = () => {
       document.removeEventListener('click', closeMenuIsClickWithout);
     }
   }
+
+  const closeMenuIsClickWithout = (evt) => {
+    const target = evt.target;
+    let isMenu = target === menu || menu.contains(target);
+    let hamburger = target === menuButton || menuButton.contains(target);
+    let isMenuActive = menu.classList.contains('navigation--show');
+
+    if (!isMenu && !hamburger && isMenuActive) {
+      toggleMenu();
+    }
+  };
 
   menuButton.addEventListener('click', toggleMenu);
 }
