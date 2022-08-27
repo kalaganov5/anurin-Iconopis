@@ -1,12 +1,25 @@
 const mainHTML = document.documentElement;
 
-const modals = [];
-const closeOldModal = (modalClass, modalShowClass) => {
+console.log(mainHTML)
+
+let modals = [];
+/**
+ *
+ * @param {*} modalClass класс текущего попап
+ * @param {*} modalShowClass класс показа попап
+ */
+const closeOldModal = (modalClass, modalShowClass, closeModal, closeModalIsEsc) => {
   const newModal = document.querySelectorAll(`.${modalClass}`);
   modals.push(newModal);
 
   if (modals.length === 2) {
     const oldModal = modals[0][0];
+    //remove old event listener
+    const closeButton = oldModal.querySelector(".modal__close-button");
+    closeButton.removeEventListener("click", closeModal);
+    console.log(closeModalIsEsc)
+    document.removeEventListener('keydown', closeModalIsEsc);
+
     oldModal.classList.remove(modalShowClass);
     modals.splice(0, 1);
   }
@@ -22,7 +35,7 @@ const showModal = (modalClass, referer = null) => {
   let scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
   const closeButton = modal.querySelector(".modal__close-button");
 
-  closeOldModal(modalClass, modalShowClass);
+
 
   // VIP set referer screen to form
   if (referer !== null) {
@@ -31,7 +44,7 @@ const showModal = (modalClass, referer = null) => {
 
   const closeModal = (evt) => {
     evt.preventDefault();
-    scrollY = body.style.top;
+    let scrollY = body.style.top;
     body.style.position = '';
     body.style.top = '';
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
@@ -40,24 +53,29 @@ const showModal = (modalClass, referer = null) => {
     setTimeout(() => {
       modal.classList.remove(modalShowClass);
     }, 300);
+
+    // remove event listener
     closeButton.removeEventListener("click", closeModal);
     document.removeEventListener('keydown', closeModalIsEsc);
+    modals = []
   }
-
-  // add event listener to close button
-  closeButton.addEventListener("click", closeModal);
-
-  modal.classList.add(modalShowClass);
-  body.style.position = 'fixed';
-  body.style.top = `-${scrollY}`;
-  mainHTML.style.scrollBehavior = 'auto';
 
   const closeModalIsEsc = function (evt) {
     if (evt.keyCode === 27) {
       closeModal(evt);
     }
   }
+
+  closeOldModal(modalClass, modalShowClass, closeModal, closeModalIsEsc);
+
+  modal.classList.add(modalShowClass);
+  body.style.position = 'fixed';
+  body.style.top = `-${scrollY}`;
+  mainHTML.style.scrollBehavior = 'auto';
+
+  // add event listener
   document.addEventListener('keydown', closeModalIsEsc);
+  closeButton.addEventListener("click", closeModal);
 };
 
 window.addEventListener('scroll', () => {
