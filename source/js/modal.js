@@ -1,12 +1,28 @@
 const mainHTML = document.documentElement;
+
+const modals = [];
+const closeOldModal = (modalClass, modalShowClass) => {
+  const newModal = document.querySelectorAll(`.${modalClass}`);
+  modals.push(newModal);
+
+  if (modals.length === 2) {
+    const oldModal = modals[0][0];
+    oldModal.classList.remove(modalShowClass);
+    modals.splice(0, 1);
+  }
+};
+
 const showModal = (modalClass, referer = null) => {
 
   const body = document.body;
   const modal = body.querySelector(`.${modalClass}`);
 
   const modalShowClass = `modal--show`;
+
   let scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
   const closeButton = modal.querySelector(".modal__close-button");
+
+  closeOldModal(modalClass, modalShowClass);
 
   // VIP set referer screen to form
   if (referer !== null) {
@@ -15,7 +31,7 @@ const showModal = (modalClass, referer = null) => {
 
   const closeModal = (evt) => {
     evt.preventDefault();
-    let scrollY = body.style.top;
+    scrollY = body.style.top;
     body.style.position = '';
     body.style.top = '';
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
