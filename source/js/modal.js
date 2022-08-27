@@ -1,6 +1,5 @@
 const mainHTML = document.documentElement;
-
-console.log(mainHTML)
+const body = document.body;
 
 let modals = [];
 /**
@@ -22,16 +21,15 @@ const closeOldModal = (modalClass, modalShowClass, closeModal, closeModalIsEscCb
 
     oldModal.classList.remove(modalShowClass);
     modals.splice(0, 1);
+
+
   }
 };
 
 const showModal = (modalClass, referer = null) => {
-
-  const body = document.body;
   const modal = body.querySelector(`.${modalClass}`);
 
   const modalShowClass = `modal--show`;
-
   let scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
   const closeButton = modal.querySelector(".modal__close-button");
 
